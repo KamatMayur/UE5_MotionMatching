@@ -43,3 +43,14 @@ public:
 		TArray<float> TrajectorySampleTimes;
 
 };
+
+UCLASS()
+class MOTIONMATCHING_API UMotionDatabase : public UDataAsset
+{
+	GENERATED_BODY()
+public:
+
+	UPROPERTY(EditAnywhere, Category = "Motion Database")
+		TArray<UAnimSequence*> Animations;
+
+};
