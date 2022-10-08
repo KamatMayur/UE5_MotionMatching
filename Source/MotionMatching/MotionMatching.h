@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "MotionMatching.generated.h"
 
-
+// This class has all the important settings for the motion matching system
 UCLASS()
 class MOTIONMATCHING_API UMotionSchema : public UDataAsset
 {
@@ -44,6 +44,7 @@ public:
 
 };
 
+// This class stores all the animations
 UCLASS()
 class MOTIONMATCHING_API UMotionDatabase : public UDataAsset
 {
@@ -52,5 +53,23 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Motion Database")
 		TArray<UAnimSequence*> Animations;
+
+};
+
+
+// This is a trajectory structure which can store values such as position, velocity and orientation
+USTRUCT(BlueprintType)
+struct MOTIONMATCHING_API FMotionTrajectory
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, Category = "Motion Trajectory")
+		TArray<FVector> TrajectoryPoints;
+
+	UPROPERTY(EditAnywhere, Category = "Motion Trajectory")
+		TArray<FVector> TrajectoryVelocties;
+
+	UPROPERTY(EditAnywhere, Category = "Motion Trajectory")
+		TArray<FRotator> TrajectroyOrientations;
 
 };
